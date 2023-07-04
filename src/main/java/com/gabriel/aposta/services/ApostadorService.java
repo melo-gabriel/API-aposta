@@ -9,7 +9,7 @@ import com.gabriel.aposta.model.dto.ApostadorIn;
 import com.gabriel.aposta.repositories.ApostadorRepository;
 
 @Service
-public class ApostaorService {
+public class ApostadorService {
 
 	@Autowired
 	private ApostadorRepository apostadorRepository;

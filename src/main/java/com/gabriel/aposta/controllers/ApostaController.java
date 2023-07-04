@@ -7,19 +7,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gabriel.aposta.model.dto.ApostadorIn;
-import com.gabriel.aposta.services.ApostaorService;
+import com.gabriel.aposta.model.dto.ApostaIn;
+import com.gabriel.aposta.model.dto.ApostaOut;
+import com.gabriel.aposta.services.ApostaService;
 
 @RestController
 public class ApostaController {
-	
+
 	@Autowired
-	private ApostaorService apostadorService;
-	
-	@PostMapping("/apostador")
-	public ResponseEntity salvarApostador(@RequestBody ApostadorIn apostadorIn) {
-		apostadorService.salvaApostador(apostadorIn);
-		
-		return ResponseEntity.status(HttpStatus.CREATED).build();
+	private ApostaService apostaService;
+
+	@PostMapping("/aposta")
+	public ResponseEntity<ApostaOut> salvaAposta(@RequestBody ApostaIn apostaIn) {
+		ApostaOut apostaOut = apostaService.salvaAposta(apostaIn);
+		return ResponseEntity.status(HttpStatus.CREATED).body(apostaOut);
+
 	}
+
 }
