@@ -1,6 +1,6 @@
-package com.gabriel.aposta.in;
+package com.gabriel.aposta.model.dto;
 
-import com.gabriel.aposta.entities.Apostador;
+import com.gabriel.aposta.model.Apostador;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,7 @@ public class ApostadorIn {
 	private String email;
 
 	public Apostador toConvert() {
-		return new Apostador(nome, email);
+		return new Apostador(null, nome, email);
 		
 	}
 }

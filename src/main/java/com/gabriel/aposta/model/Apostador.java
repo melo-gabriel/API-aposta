@@ -1,4 +1,4 @@
-package com.gabriel.aposta.entities;
+package com.gabriel.aposta.model;
 
 import java.io.Serializable;
 
@@ -26,13 +26,4 @@ public class Apostador implements Serializable{
 	
 	private String nome;
 	private String email;
-	
-	public Apostador(String nome, String email) {
-		super();
-		this.nome = nome;
-		this.email = email;
-	}
-	
-	
-
 }

@@ -7,20 +7,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gabriel.aposta.entities.Apostador;
-import com.gabriel.aposta.in.ApostadorIn;
-import com.gabriel.aposta.repositories.ApostadorRepository;
+import com.gabriel.aposta.model.dto.ApostadorIn;
+import com.gabriel.aposta.services.ApostaorService;
 
 @RestController
 public class ApostaController {
 	
 	@Autowired
-	private ApostadorRepository apostadorRepository;
+	private ApostaorService apostadorService;
 	
 	@PostMapping("/apostador")
 	public ResponseEntity salvarApostador(@RequestBody ApostadorIn apostadorIn) {
-		Apostador apostador = apostadorIn.toConvert();
-		apostadorRepository.save(apostador);
+		apostadorService.salvaApostador(apostadorIn);
 		
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
