@@ -24,7 +24,7 @@ public class Apostador implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long idApostador;
 	
 	@NotBlank
 	private String nome;
