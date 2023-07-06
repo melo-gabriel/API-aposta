@@ -31,7 +31,7 @@ public class ApostaController {
 	}
 
 	@GetMapping("/aposta/buscaAposta/{idApostador}")
-	public List<ApostasOut> findiByIdApostador(@PathVariable Long idApostador) {
+	public List<ApostasOut> findByIdApostador(@PathVariable Long idApostador) {
 		return apostaService.findByIdApostador(idApostador);
 
 	}
